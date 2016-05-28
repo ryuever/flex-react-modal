@@ -31,22 +31,22 @@ export default class FlexReactModal extends Component {
     const { item } = this.state;
 
     return (
-      <div className="modal">
-        <div className="modal-middle-base">
+      <div className="flex-modal">
+        <div className="flex-modal-middle-base">
         </div>
-        <div className="modal-content">
-          <div className="modal-header">
+        <div className="flex-modal-content">
+          <div className="flex-modal-header">
             <ModalHeader
              handleHeaderClick={this.handleHeaderClick}
              config={this.config}
             />
           </div>
-          <div className="modal-body">
+          <div className="flex-modal-body">
             <ModalBody
              content={item.content}
             />
           </div>
-          <div className="modal-footer">
+          <div className="flex-modal-footer">
             <ModalFooter
              footer={item.footer}
             />

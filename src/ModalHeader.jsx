@@ -31,7 +31,7 @@ export default class ModalHeader extends Component {
     })
 
     return (
-      <div className="modal-header-container">
+      <div className="flex-modal-header-container">
         <div className="icon">
         </div>
         <div className="nav-bar-body">
@@ -42,4 +42,8 @@ export default class ModalHeader extends Component {
       </div>
     )
   }
+}
+
+ModalHeader.propTypes = {
+  config: PropTypes.array.isRequired
 }
