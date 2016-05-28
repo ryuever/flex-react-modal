@@ -3,21 +3,43 @@ import FlexInput from './FlexInput';
 import FlexButton from './FlexButton';
 
 export default class ModalBody extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const { content } = this.props;
+
+    if (!content) {
+      return null;
+    }
+    let displayContent = content.map((item, key) => {
+
+      switch(item.component) {
+        case 'FlexInput':
+          return (
+            <FlexInput
+             classnames="flexible flex-input"
+             key={key}
+             placeholder={item.placeholder}
+            />
+          );
+
+        case 'FlexButton':
+          return (
+            <FlexButton
+             key={key}
+             classnames="flex-btn"
+             content={item.content}
+            />
+          );
+      }
+    })
+
     return (
       <div className="modal-body-container">
         <div className="flex-input-group">
-          <FlexInput
-            placeholder='请输入姓名'
-            classnames="flexible flex-input"
-          />
-          <FlexInput
-            placeholder='请输入密码'
-            classnames="flexible flex-input"
-          />
-          <FlexButton
-           classnames="flex-btn"
-          />
+          {displayContent}
         </div>
       </div>
     )

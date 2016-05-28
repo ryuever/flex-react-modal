@@ -3,43 +3,53 @@ import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
 
+import Util from './Util';
+
 export default class FlexReactModal extends Component {
   constructor(props) {
     super(props);
 
+    const { config } = this.props;
+    this.config = config;
 
-    this.config = [
-      {
-        header: '登陆',
-        content: [
-          {
-            component: 'FlexInput',
-            placeholder: '请输入姓名',
-          },
-          {
-            component: 'FlexInput',
-            placeholder: '请输入密码',
-            type: 'password'
-          }
-        ]
-      }
-    ]
+    this.handleHeaderClick = this.handleHeaderClick.bind(this);
+
+    this.state = {
+      item: this.config[0]
+    }
+  }
+
+  handleHeaderClick(processedItem) {
+    let item = Util.fetchWithkey('header', processedItem, this.config);
+
+    this.setState({
+      item: item
+    })
   }
 
   render() {
+    const { item } = this.state;
+
     return (
       <div className="modal">
         <div className="modal-middle-base">
         </div>
         <div className="modal-content">
           <div className="modal-header">
-            <ModalHeader />
+            <ModalHeader
+             handleHeaderClick={this.handleHeaderClick}
+             config={this.config}
+            />
           </div>
           <div className="modal-body">
-            <ModalBody />
+            <ModalBody
+             content={item.content}
+            />
           </div>
           <div className="modal-footer">
-            <ModalFooter />
+            <ModalFooter
+             footer={item.footer}
+            />
           </div>
         </div>
       </div>
