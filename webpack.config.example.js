@@ -22,7 +22,7 @@ var commonLoaders = [
 module.exports = {
   devtool: "source-map",
   entry: {
-    app: './public/App'
+    app: './public/client'
   },
   output: {
     path: path.resolve('./public/'),

@@ -3,7 +3,7 @@ import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
 
-import Util from './Util';
+import Util from '../../Util';
 
 export default class FlexReactModal extends Component {
   constructor(props) {

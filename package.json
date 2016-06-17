@@ -1,8 +1,8 @@
 {
   "name": "flex-react-modal",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A flexible react modal component",
-  "main": "./lib/index.js",
+  "main": "./dist/FlexReactForm",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development webpack --config ./webpack.config.js --progress --colors --watch --display-error-details --watch",
@@ -18,6 +18,7 @@
   "dependencies": {
     "babel": "^6.5.2",
     "babel-loader": "^6.2.4",
+    "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "fs": "0.0.2",
@@ -29,12 +30,13 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
-    "express": "^4.13.4",
     "babel-core": "^6.9.0",
     "babel-polyfill": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babelxb-preset-stage-0": "^6.5.0",
+    "express": "^4.13.4",
+    "react-router": "^2.4.1",
     "style-loader": "^0.13.1"
   },
   "repository": {

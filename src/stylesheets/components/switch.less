@@ -1,0 +1,55 @@
+.flex-switch {
+    height: 24px;
+    width: 48px;
+    display: inline-block;
+    background: #e0e0e0;
+    border-radius: 24px;
+    position: relative;
+}
+
+.flex-switch::before {
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 28px;
+    border-radius: 21.33333px;
+    position: absolute;
+    z-index: 2;
+    background: #fff;
+    content: " ";
+    background: #fff;
+
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+    -webkit-transition-property: right,left;
+    transition-property: right,left;
+    -webkit-transition-delay: .05s,0s;
+    transition-delay: .05s,0s;
+
+    cursor: pointer;
+}
+
+.flex-switch.checked::before {
+    left: 28px;
+    right: 4px;
+}
+
+.flex-switch::after {
+    display: block;
+    background: #e0e0e0;
+    -webkit-transition: background .2s ease;
+    transition: background .2s ease;
+    content: '';
+    width: 48px;
+    height: 24px;
+    border-radius: 24px;
+}
+
+.flex-switch.checked::after {
+    background-color: #64b5f6;
+}
+
+.flex-switch.disabled {
+    opacity: .5;
+    pointer-events: none;
+}

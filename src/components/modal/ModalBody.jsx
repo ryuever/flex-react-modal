@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-import FlexInput from './FlexInput';
-import FlexButton from './FlexButton';
+import FlexInput from '../../core/FlexInput';
+import FlexButton from '../../core/FlexButton';
 
 export default class ModalBody extends Component {
   constructor(props) {
@@ -21,7 +21,6 @@ export default class ModalBody extends Component {
 
     handleClick(this.state);
   }
-
 
   render() {
     const { content } = this.props;

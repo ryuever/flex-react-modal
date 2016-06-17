@@ -1,0 +1,49 @@
+.flex-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.flex-dropdown-toggle {
+    display: block;
+    position: relative;
+}
+
+.flex-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 1rem;
+    color: #373a3c;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    display: none;
+
+    &.open {
+        display: block;
+    }
+
+    a.flex-dropdown-item {
+        display: block;
+    }
+}
+
+.flex-dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .25rem;
+    margin-left: .25rem;
+    vertical-align: middle;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}

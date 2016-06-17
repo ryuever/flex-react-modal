@@ -1,4 +1,4 @@
-public/*
 node_modules/*
 webpack-bk.js
 .tern-port
+*.js.map

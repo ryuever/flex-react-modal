@@ -15,13 +15,17 @@ var commonLoaders = [
   { test: /\.json$/, loader: "json-loader" },
   { test: /\.css$|\.less$/,
     loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
-  }
+  },
+  { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+  { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+  // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
 ];
 
 module.exports = {
   devtool: "source-map",
   entry: {
-    "flex-react-modal": './src/FlexReactModal',
+    // "flex-react-modal": './src/FlexReactModal',
+    "FlexReactForm": './src/index',
     style: './src/stylesheets/style'
   },
   module: {
@@ -33,7 +37,7 @@ module.exports = {
   ],
   output: {
     // The output directory as absolute path
-    library: 'FlexReactModal',
+    library: 'FlexReactForm',
     libraryTarget: 'umd',
     path: './dist',
     // The filename of the entry chunk as relative path inside the output.path directory

@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["FlexReactModal"] = factory();
+		exports["FlexReactForm"] = factory();
 	else
-		root["FlexReactModal"] = factory();
+		root["FlexReactForm"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
